@@ -9,15 +9,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f9fafc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+  
+ }
 
 .App-link {
   color: #61dafb;
@@ -30,4 +30,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table{
+  width: 200px;
+}
+table, td, th{
+  border: black solid 2px;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
 }
