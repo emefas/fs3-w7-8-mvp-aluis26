@@ -6,8 +6,6 @@ import './App.css';
 function App() {
 
   const [typeform, setTypeform] = useState ([]);
-  const [colmone, setColmone] = useState ([]);
-  const [colmtwo, setColmtwo] = useState ([]);
   const [all, setAll] = useState ([])
   useEffect(() => {
       fetch('https://api.typeform.com/forms/LkGItU/responses', {
@@ -18,7 +16,7 @@ function App() {
       })
       .then(response => response.json())
       .then(function(response){
-        setTypeform(response.items[0].answers)
+        setTypeform(response)
       // .then(function(response){
       //   setTypeform(...typeform, typeform.map(e=>( typeform[e]!= "text" ? e="text")))
             
@@ -26,24 +24,22 @@ function App() {
 
   },[])
 
-useEffect(()=>{
-  const one= typeform.map(e => e.field.type)
-  setColmone(one)
-  console.log(one)
+// useEffect(()=>{
+//   const one= typeform.map(e => e.field.type)
+//   console.log(one)
 
-  const two = typeform.map(e => e[e.type])
-  setColmtwo(two)
-  console.log(two)
+//   const two = typeform.map(e => e[e.type])
+//   console.log(two)
 
-  var allObj={};
-  for(let i=0; i<one.length; i++){
-  allObj[one[i]]= two[i]
-   }
-   console.log(allObj)
-   setAll(allObj)
+//   var allObj={};
+//   for(let i=0; i<one.length; i++){
+//   allObj[one[i]]= two[i]
+//    }
+//    console.log(allObj)
+//    setAll(allObj)
 
 
-},[typeform])
+// },[typeform])
 
 
 
