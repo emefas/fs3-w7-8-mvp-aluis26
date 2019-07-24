@@ -10,6 +10,7 @@ function dataDisplay (props){
       {/* <pre>
         <code>{JSON.stringify(props.clean, null, 4)}</code>
       </pre>   */}
+      <h1>Data from typeform</h1>
       <table>
         <tr>
         {headers.map(function (e,index){
