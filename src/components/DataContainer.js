@@ -6,37 +6,42 @@ import DataDisplay from './DataDisplay';
 class dataContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            obj: [],
-            clean:[],
-            final:[],
+        this.state = {            
+            clean:[]
+          
            
          }
     }
 
-componentDidMount(){
-    fetchData()
-    .then((result)=> {
-        return result.items.map(item => item.answers)
-       
-    })
-    .then(arr => arr.map(answer => answer.map(field =>{
-        const obj={[field.field.type]:field[field.type]}
-        console.log(obj)
-        this.setState({obj})   
-        this.setState({clean: this.state.clean.concat(this.state.obj)})
-       
-       
-    })))
-    .then(answers =>{
-        answers.map( e=>{       
-        this.state.clean[answers]
-        
-
-    })
- 
-        
-}
+    componentDidMount() {
+        fetchData()
+          .then(data => {
+            
+    
+    
+            return data.items.map(row => {     
+                 //mapegem cada persona  
+    
+              const columns = row.answers.map(column => {
+                //   per cada persona dins de answers mapejem les 7 respostes i creem un nou nou objecte directament a return posant unes keys concretes amb els valors asignats.
+    
+                return {
+                  value: column[column.type]
+                };
+    
+              });
+            // tanquem el map anterior (de cada persona) englobant les seves variables per cada una de les respostes amb la key column.
+              return {
+                columns
+              };
+            });
+          })
+          .then(data => {
+            console.log('TCL: dataContainer -> componentDidMount -> data', data);
+            this.setState({clean: data})
+            // ara ja tenim el format desitjat, tres arrays englobats en un object que contenen cada un nomes els valors que necessitem per la taula.
+          });
+    }
 
 
     render() {  
@@ -48,5 +53,6 @@ componentDidMount(){
          );
     }
 }
+
  
 export default dataContainer;
