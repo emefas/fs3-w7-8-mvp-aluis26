@@ -9,7 +9,7 @@ function dataDisplay (props){
     <div>
       {/* <pre>
         <code>{JSON.stringify(props.clean, null, 4)}</code>
-      </pre>   */}
+      </pre>   */}s
       <h1>Data from typeform</h1>
       <table>
         <tr>
