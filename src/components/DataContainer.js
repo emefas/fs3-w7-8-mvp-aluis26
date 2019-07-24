@@ -22,7 +22,7 @@ class dataContainer extends React.Component {
             return data.items.map(row => {     
                  //mapegem cada persona  
     
-              const columns = row.answers.map(column => {s
+              const columns = row.answers.map(column => {
                 //   per cada persona dins de answers mapejem les 7 respostes i creem un nou nou objecte directament a return posant unes keys concretes amb els valors asignats.
     
                 return {
