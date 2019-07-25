@@ -1,10 +1,11 @@
 import React from 'react';
-import { traverse } from '@babel/types';
+import './DataDisplay.css'
 
 
 function dataDisplay (props){
     console.log(props.clean)
-    var headers =["Name","Rating 1","Rating 2","Rating 3", "thoughts 1", "thoughts 2", "linkedin Profile"]
+    // var headers =["Name","Rating 1","Rating 2","Rating 3", "thoughts 1", "thoughts 2", "linkedin Profile"]
+    var headers = ["Name","Surname","Email","Email","Gender","Id","Birthday","adress","Nationality", "second Nationality","Program selected","Linkdin","12","13","14","15","16","17","18"]
     return(
     <div>
       {/* <pre>
@@ -18,11 +19,11 @@ function dataDisplay (props){
         </tr>
       
         
-        {props.clean.map(e=> {          
-           const rows = e.columns.map(val=>{
-            return <td>{val.value}</td>
+        {props.clean.map(function(e, index) {          
+           const rows = e.columns.map(function(val, index){
+            return <td key={index}>{val.value}</td>
           })
-          return <tr>{rows}</tr>
+          return <tr key={index}>{rows}</tr>
           
         })}
                      
