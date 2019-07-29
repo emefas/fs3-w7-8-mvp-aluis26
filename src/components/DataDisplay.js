@@ -5,7 +5,7 @@ import './DataDisplay.css'
 function dataDisplay (props){
     console.log(props.clean)
     // var headers =["Name","Rating 1","Rating 2","Rating 3", "thoughts 1", "thoughts 2", "linkedin Profile"]
-    var headers = ["Name","Surname","Email","Email","Gender","ID","Birthday","Address","Nationality", "Second Nationality","Program Selected","LinkedIn","12","13","14","15","16","17","18"]
+    var headers = ["Name","Surname","Email","Email","Gender","ID","Birthday","Address","Nationality", "Second Nationality","Program Selected","Start Date Selected","CV Upload","LinkedIn","Motivation Note","Payment Options","Referral","17","18"]
     return(
     <div>
       {/* <pre>
