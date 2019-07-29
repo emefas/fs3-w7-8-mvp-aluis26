@@ -27,6 +27,27 @@ th, td {
   box-sizing: border-box;
 }
 
+.sticky-table .sticky-table-table {
+  display: table;
+  box-sizing: border-box;
+}
+
+.sticky-table .sticky-table-row {
+  display: table-row;
+}
+
+.sticky-table .sticky-table-cell {
+  display: table-cell;
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid #e5e5e5;
+  background-color: #fff;
+}
+
+.sticky-table .sticky-table-corner, .sticky-table .sticky-table-cell:first-child {
+  border-right: 2px solid #e5e5e5;
+}
+
 
 
  

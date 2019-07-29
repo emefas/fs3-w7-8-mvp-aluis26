@@ -8,8 +8,6 @@ class DataContainer extends React.Component {
         super(props);
         this.state = {            
             clean:[]
-          
-           
          }
     }
 

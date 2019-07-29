@@ -12,40 +12,68 @@ function dataDisplay (props){
     // let cells;
 
     // for (let r = 0; r < 50; r++){
-
+      
     // }
     return(
-    <div>
-      {/* <pre>
-        <code>{JSON.stringify(props.clean, null, 4)}</code>
-      </pre>   */}
-      <h1>Data from typeform</h1>
-      <div>
-      <StickyTable>
-        <Row>
-        {headers.map(function (e,index){
-          return  <Cell key= {index}>{e}</Cell> } )}                  
-        </Row>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        {/* <pre>
+          <code>{JSON.stringify(props.clean, null, 4)}</code>
+        </pre>   */}
+        <h1>Data from typeform</h1>
+        <div style={{flex: 1, height: 600}}>
+        <StickyTable>
+          <Row>
+          {headers.map(function (e,index){
+            return  <Cell key= {index}>{e}</Cell> } )}
+          </Row>
+          {props.clean.map(function(e, index) {
+            console.log("e => ", e);
+             const rows = e.columns.map(function(val, index){
+               console.log(val);
+              return <Cell key={index}>{val.value}</Cell>
+            })
+            return <Row key={index}>{rows}</Row>
+          })}
+        </StickyTable>
+        </div>
+      </div>
+  
+      )
+    }
+
+
+
+
+//     return(
+//     <div>
+//       {/* <pre>
+//         <code>{JSON.stringify(props.clean, null, 4)}</code>
+//       </pre>   */}
+//       <h1>Data from typeform</h1>
+//       <div>
+//       <StickyTable>
+//         <tr>
+//         {headers.map(function (e,index){
+//           return  <th key= {index}>{e}</th> } )}                  
+//         </tr>
       
         
-        {props.clean.map(function(e, index) { 
-          console.log("e => ", e);         
-           const rows = e.columns.map(function(val, index){
-             console.log(val);
-            return <Cell key={index}>{val.value}</Cell>
-          })
-          return <Row key={index}>{rows}</Row>
+//         {props.clean.map(function(e, index) {          
+//            const rows = e.columns.map(function(val, index){
+//             return <td key={index}>{val.value}</td>
+//           })
+//           return <tr key={index}>{rows}</tr>
           
-        })}
+//         })}
                      
         
-      </StickyTable>
+//       </StickyTable>
 
 
-      </div>
-    </div>
+//       </div>
+//     </div>
 
-    )
-}
+//     )
+// }
  
 export default dataDisplay;
