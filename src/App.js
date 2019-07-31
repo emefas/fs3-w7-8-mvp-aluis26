@@ -5,19 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import DataContainer from './components/DataContainer';
 import  Navigation from './components/ Navigation';
 import Home from './components/Home';
+import DataView from './components/DataView';
 import Dashboard from './components/Dashboard';
-import Chart from './components/Chart';
 
 
 function App(){
     return(
         <div>
-            < Navigation />
+            <Navigation />
             <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/chart" component={Chart} />
+                <Route path="/dataview" component= {DataView} />
+                <Route path="/dashboard" component= {Dashboard} />
             </Switch>
             </BrowserRouter>
         </div>

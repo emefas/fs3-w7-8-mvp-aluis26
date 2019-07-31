@@ -13,12 +13,12 @@ export default class Navigation extends Component {
                 <Navbar bg="light" variant="light" >
                     <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/dataview">Data View</Nav.Link>
                     <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                    <Nav.Link href="/chart">Chart</Nav.Link>
                     </Nav>
                     <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
+                    <Button variant="outline-primary">Search</Button>
                     </Form>
                 </Navbar>
             </div>
